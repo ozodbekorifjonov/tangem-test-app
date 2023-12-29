@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { EN, RU } from '@/const';
+import { EN, RU } from '../../const';
 import RUSSIAN from '../../lang/ru.json';
 import ENGLISH from '../../lang/en.json';
 

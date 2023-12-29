@@ -2,96 +2,96 @@ import React from 'react';
 import styled from 'styled-components';
 import AlertBg from '@/assets/images/alert-bg.png';
 import { useIntl } from 'react-intl';
-import StyledButton from '@/ui/StyledButton';
+import StyledButton from '@/ui/styled-button/StyledButton';
 import Icon from '@/assets/icons/Icon';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@/types/types';
 import { closeAlert } from '@/store/reducers/applicationSlice';
 
 const StyledAlert = styled.div`
-  background: linear-gradient(180deg, #101010 0%, #0b0b0b 100%);
-  position: sticky;
-  width: 100%;
-  right: 0;
-  top: 0;
-  z-index: 1000;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 8px 0;
+    background: linear-gradient(180deg, #101010 0%, #0b0b0b 100%);
+    position: sticky;
+    width: 100%;
+    right: 0;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
 `;
 
 const StyledBgImage = styled.div`
-  position: absolute;
-  height: 100%;
-  width: 20%;
-  left: 0;
-  top: 0;
-
-  img {
-    object-fit: contain;
+    position: absolute;
     height: 100%;
-    margin-left: 8px;
-  }
+    width: 20%;
+    left: 0;
+    top: 0;
+
+    img {
+        object-fit: contain;
+        height: 100%;
+        margin-left: 8px;
+    }
 `;
 
 const StyledMessage = styled.div`
-  position: inherit;
-  width: 60%;
-  left: 20%;
-  text-align: center;
+    position: inherit;
+    width: 60%;
+    left: 20%;
+    text-align: center;
 
-  ul {
-    list-style-type: none;
-    margin: unset;
+    ul {
+        list-style-type: none;
+        margin: unset;
 
-    li {
-      display: inline-block;
-      font-size: var(--font-size-medium);
-      font-weight: 400;
-      line-height: 20px;
-      letter-spacing: 0.048px;
+        li {
+            display: inline-block;
+            font-size: var(--font-size-medium);
+            font-weight: 400;
+            line-height: 20px;
+            letter-spacing: 0.048px;
 
-      .content {
-        display: flex;
-        align-items: center;
-        flex-direction: row;
+            .content {
+                display: flex;
+                align-items: center;
+                flex-direction: row;
 
-        .text-bold {
-          font-weight: 600;
+                .text-bold {
+                    font-weight: 600;
+                }
+
+                .text-bright {
+                    color: #d7a830;
+                    letter-spacing: -0.64px;
+                }
+            }
         }
-
-        .text-bright {
-          color: #d7a830;
-          letter-spacing: -0.64px;
-        }
-      }
     }
-  }
 `;
 
 const StyledCollapse = styled.div`
-  position: inherit;
-  width: 20%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding-right: 22px;
+    position: inherit;
+    width: 20%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 22px;
 
-  span {
-    background-color: #fff;
-    margin-left: 14px;
-    cursor: pointer;
-  }
+    .icon {
+        background-color: #fff;
+        margin-left: 14px;
+        cursor: pointer;
+    }
 `;
 
 const StyledDot = styled.span`
-  width: 3px;
-  height: 3px;
-  margin: 0 12px;
-  background-color: #313131;
-  display: inline-block;
-  border-radius: 50%;
+    width: 3px;
+    height: 3px;
+    margin: 0 12px;
+    background-color: #313131;
+    display: inline-block;
+    border-radius: 50%;
 `;
 
 const Alert: React.FunctionComponent = () => {

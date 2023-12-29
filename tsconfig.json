@@ -10,6 +10,9 @@
     "paths": {
       "@/*": [
         "*"
+      ],
+      "@const/*": [
+        "const/*"
       ]
     },
     "allowJs": true,

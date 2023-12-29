@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useDispatch, useSelector } from 'react-redux';
-import { RU, EN } from '@/const';
+import { RU, EN } from '../../const';
 import RUSSIAN from '../../lang/ru.json';
 import ENGLISH from '../../lang/en.json';
-import { selectLang, selectLocale } from '@/store/reducers/intlSlice';
+import { selectLang, selectLocale } from '../../store/reducers/intlSlice';
 import { RootState } from '@/types/types';
 
 const LangBlock = styled.div`
