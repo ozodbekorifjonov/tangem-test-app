@@ -1,0 +1,38 @@
+{
+  "HOME.WELCOME": [
+    {
+      "type": 0,
+      "value": "Welcome!"
+    }
+  ],
+  "ALERT.BLACK_FRIDAY": [
+    {
+      "type": 0,
+      "value": "Black Friday"
+    }
+  ],
+  "ALERT.24_27_NOVEMBER": [
+    {
+      "type": 0,
+      "value": "24-27 Nov"
+    }
+  ],
+  "ALERT.USE_CODE": [
+    {
+      "type": 0,
+      "value": "Use code "
+    }
+  ],
+  "ALERT.AT_CHECKOUT": [
+    {
+      "type": 0,
+      "value": "at checkout"
+    }
+  ],
+  "ALERT.SHOP_NOW": [
+    {
+      "type": 0,
+      "value": "Shop now"
+    }
+  ]
+}

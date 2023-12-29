@@ -1,0 +1,38 @@
+{
+  "HOME.WELCOME": [
+    {
+      "type": 0,
+      "value": "Добро пожаловать!"
+    }
+  ],
+  "ALERT.BLACK_FRIDAY": [
+    {
+      "type": 0,
+      "value": "Черная Пятница"
+    }
+  ],
+  "ALERT.24_27_NOVEMBER": [
+    {
+      "type": 0,
+      "value": "24-27 ноября"
+    }
+  ],
+  "ALERT.USE_CODE": [
+    {
+      "type": 0,
+      "value": "Использовать код"
+    }
+  ],
+  "ALERT.AT_CHECKOUT": [
+    {
+      "type": 0,
+      "value": "при оформлении заказа"
+    }
+  ],
+  "ALERT.SHOP_NOW": [
+    {
+      "type": 0,
+      "value": "Купить сейчас"
+    }
+  ]
+}
