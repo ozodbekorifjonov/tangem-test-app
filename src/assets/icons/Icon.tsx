@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import Tell from './src/tell.svg';
 import Close from './src/close.svg';
+import ArrowRight from './src/arrow-right.svg';
 
 const StyledSpan = styled.span<{ $bgcolor?: string; $src: string }>`
     width: 24px;
@@ -23,6 +24,7 @@ const StyledSpan = styled.span<{ $bgcolor?: string; $src: string }>`
 const ImgObj: { [key: string]: string } = {
   tell: Tell,
   close: Close,
+  arrowRight: ArrowRight,
   // Add more icons here
 };
 

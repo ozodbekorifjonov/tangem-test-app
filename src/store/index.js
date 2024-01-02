@@ -5,8 +5,8 @@ import intlSlice from './reducers/intlSlice';
 const store = configureStore({
   reducer: {
     application: applicationSlice,
-    intl: intlSlice
-  }
+    intl: intlSlice,
+  },
 });
 
 export default store;

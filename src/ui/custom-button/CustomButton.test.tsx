@@ -1,10 +1,10 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-import StyledButton from './StyledButton';
+import CustomButton from './CustomButton';
 
-test('StyledButton renders correctly', () => {
+test('CustomButton renders correctly', () => {
   const { getByText } = render(
-    <StyledButton onClick={() => console.log('Button clicked')}>Click me</StyledButton>,
+    <CustomButton onClick={() => console.log('Button clicked')}>Click me</CustomButton>,
   );
 
   const buttonText = getByText('Click me');
@@ -20,18 +20,18 @@ test('StyledButton renders correctly', () => {
   });
 });
 
-test('StyledButton click handler is called', () => {
+test('CustomButton click handler is called', () => {
   const handleClick = jest.fn();
 
-  const { getByText } = render(<StyledButton onClick={handleClick}>Click me</StyledButton>);
+  const { getByText } = render(<CustomButton onClick={handleClick}>Click me</CustomButton>);
 
   fireEvent.click(getByText('Click me'));
 
   expect(handleClick).toHaveBeenCalled();
 });
 
-test('StyledButton is disabled', () => {
-  const { getByText } = render(<StyledButton disabled>Click me</StyledButton>);
+test('CustomButton is disabled', () => {
+  const { getByText } = render(<CustomButton disabled>Click me</CustomButton>);
 
   const button = getByText('Click me').parentElement as HTMLElement;
   expect(button).toHaveAttribute('disabled');

@@ -6,6 +6,7 @@ const colors = {
   primary: '#D7A830',
   secondary: '#1AD598',
   light: '#FFF',
+  black: '#0B0B0B',
   background: '#FEFEFE', // Add more colors as needed
 };
 
@@ -20,6 +21,7 @@ const GlobalStyle = createGlobalStyle`
         --color-primary: ${colors.primary};
         --color-secondary: ${colors.secondary};
         --color-light: ${colors.light};
+        --color-black: ${colors.black};
         --background-color: ${colors.background};
         --font-size-small: ${fontSizes.small};
         --font-size-medium: ${fontSizes.medium};
@@ -44,7 +46,7 @@ const GlobalStyle = createGlobalStyle`
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         background-color: var(--background-color);
-        color: var(--color-light);
+        color: var(--color-black);
         margin: unset;
         padding: unset;
     }

@@ -38,12 +38,11 @@ const Button = styled.button`
   &:hover {
     span {
       color: #0b0b0b;
-      -webkit-text-fill-color: unset;
     }
   }
 `;
 
-function StyledButton({
+function CustomButton({
   type = 'button',
   color,
   onClick,
@@ -70,4 +69,4 @@ function StyledButton({
   );
 }
 
-export default StyledButton;
+export default CustomButton;

@@ -34,5 +34,11 @@
       "type": 0,
       "value": "Купить сейчас"
     }
+  ],
+  "CARD.SHOP_NOW_THROUGH_MONDAY": [
+    {
+      "type": 0,
+      "value": "Делайте покупки до понедельника"
+    }
   ]
 }
