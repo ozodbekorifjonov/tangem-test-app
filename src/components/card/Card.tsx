@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import CardBG from '../../assets/images/card-bg.png';
 import Icon from '@/assets/icons/Icon';
@@ -8,7 +8,7 @@ import { RootState } from '@/types/types';
 import { closeCard } from '@/store/reducers/applicationSlice';
 
 const StyledDiv = styled.div`
-  margin-top: 600px;
+  margin-top: 100vh;
   display: flex;
   justify-content: flex-end;
   padding: 0 34px;
@@ -18,7 +18,7 @@ const StyledDiv = styled.div`
   }
 `;
 
-const StyledCard = styled.div`
+const StyledCard = styled.div<{ $isVisible: boolean }>`
   width: 600px;
   height: 345px;
   background-color: #111111;
@@ -32,6 +32,8 @@ const StyledCard = styled.div`
   color: #fff;
   padding: 75px 30px 55px;
   position: relative;
+  opacity: ${({ $isVisible }) => ($isVisible ? '1' : '0')};
+  transition: opacity 0.3s ease;
 
   @media (max-width: 768px) {
     width: 100%;
@@ -121,6 +123,20 @@ const Card: React.FunctionComponent = () => {
   const { formatMessage } = useIntl();
   const { showCard } = useSelector((state: RootState) => state.application);
   const dispatch = useDispatch();
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY || document.documentElement.scrollTop;
+      setIsVisible(scrollY > 400);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   const handleCloseCard = () => {
     dispatch(closeCard());
@@ -129,7 +145,7 @@ const Card: React.FunctionComponent = () => {
   if (showCard) {
     return (
       <StyledDiv>
-        <StyledCard>
+        <StyledCard $isVisible={isVisible}>
           <StyledClose>
             <Icon
               name={'close'}

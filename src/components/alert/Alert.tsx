@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import AlertBg from '@/assets/images/alert-bg.png';
 import { useIntl } from 'react-intl';
@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@/types/types';
 import { closeAlert } from '@/store/reducers/applicationSlice';
 
-const StyledAlert = styled.div`
+const StyledAlert = styled.div<{ $isVisible: boolean }>`
   background: linear-gradient(180deg, #101010 0%, #0b0b0b 100%);
   position: sticky;
   width: 100%;
@@ -20,6 +20,8 @@ const StyledAlert = styled.div`
   align-items: center;
   padding: 8px 0;
   color: var(--color-light);
+  transition: opacity 0.3s ease;
+  opacity: ${({ $isVisible }) => ($isVisible ? '1' : '0')};
 `;
 
 const StyledBgImage = styled.div`
@@ -150,6 +152,20 @@ const Alert: React.FunctionComponent = () => {
   const { formatMessage } = useIntl();
   const { showAlert } = useSelector((state: RootState) => state.application);
   const dispatch = useDispatch();
+  const [isVisible, setIsVisible] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY || document.documentElement.scrollTop;
+      setIsVisible(scrollY === 0);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   const handleCloseAlert = () => {
     dispatch(closeAlert());
@@ -157,7 +173,7 @@ const Alert: React.FunctionComponent = () => {
 
   if (showAlert) {
     return (
-      <StyledAlert>
+      <StyledAlert $isVisible={isVisible}>
         <StyledBgImage>
           <img
             src={AlertBg}
